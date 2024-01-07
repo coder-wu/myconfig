@@ -115,9 +115,13 @@ alias feilo="${HOMELAB_HOME}/global/wrap.sh v2ray load"
 export JAVA_HOME="${HOME}/Code/env/jdk"
 export MAVEN_HOME="${HOME}/Code/env/maven"
 
+# mdbook
+export MDBOOK_HOME="${HOME}/Code/env/mdbook"
+
 # Path
 export ENV_HOME="${HOME}/Code/env"
 export PATH="${PATH}:/usr/local/sbin:${ENV_HOME}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
+export PATH="${PATH}:${MDBOOK_HOME}"
 
 # k8s
 export PAT=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
@@ -126,3 +130,5 @@ source <(kubectl completion zsh)
 # daily note
 export DAILY_NOTE_HOME="${HOME}/Documents/Athena/being/daily"
 alias daily="${HOME}/Code/script/daily-note/daily.sh"
+
+
