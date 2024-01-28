@@ -99,17 +99,19 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # proxy
-export http_proxy_host="127.0.0.1"
+export proxy_host="127.0.0.1"
 export http_proxy_port=1087
+export socks_proxy_port=1081
 
-export http_proxy="http://${http_proxy_host}:${http_proxy_port}"
+export http_proxy="http://${proxy_host}:${http_proxy_port}"
 export https_proxy="${http_proxy}"
+export socks_proxy="socks5://${proxy_host}:${socks_proxy_port}"
 
 export no_proxy="localhost,127.0.0.1,10.96.0.0/24,192.168.0.0/16,1192.168.8.2/16,192.168.64.7/24"
 
 # home lab
-export HOMELAB_HOME="${HOME}/Code/homelab"
-alias feilo="${HOMELAB_HOME}/global/wrap.sh v2ray load"
+export HOMELAB_HOME="${HOME}/Code/github/homelab"
+alias feilo="${HOMELAB_HOME}/ray/ray.sh load"
 
 # Java
 export JAVA_HOME="${HOME}/Code/env/jdk"
@@ -117,11 +119,6 @@ export MAVEN_HOME="${HOME}/Code/env/maven"
 
 # mdbook
 export MDBOOK_HOME="${HOME}/Code/env/mdbook"
-
-# Path
-export ENV_HOME="${HOME}/Code/env"
-export PATH="${PATH}:/usr/local/sbin:${ENV_HOME}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
-export PATH="${PATH}:${MDBOOK_HOME}"
 
 # k8s
 export PAT=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
@@ -131,4 +128,13 @@ source <(kubectl completion zsh)
 export DAILY_NOTE_HOME="${HOME}/Documents/Athena/being/daily"
 alias daily="${HOME}/Code/script/daily-note/daily.sh"
 
+# Path
+export ENV_HOME="${HOME}/Code/env"
 
+# Does not load PATH again in tmux
+if [[ ! -z $TMUX ]]; then
+  export PATH="${PATH}:/usr/local/sbin"
+  export PATH="${PATH}:${ENV_HOME}"
+  export PATH="${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
+  export PATH="${PATH}:${MDBOOK_HOME}"
+fi
