@@ -121,7 +121,6 @@ export MAVEN_HOME="${HOME}/Code/env/maven"
 export MDBOOK_HOME="${HOME}/Code/env/mdbook"
 
 # k8s
-export PAT=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
 source <(kubectl completion zsh)
 
 # daily note
