@@ -120,6 +120,9 @@ export MAVEN_HOME="${HOME}/Code/env/maven"
 # mdbook
 export MDBOOK_HOME="${HOME}/Code/env/mdbook"
 
+# rclone
+export RCLONE_HOME="${HOME}/Code/env/rclone"
+
 # k8s
 source <(kubectl completion zsh)
 
@@ -135,5 +138,5 @@ if [[ ! -z $TMUX ]]; then
   export PATH="${PATH}:/usr/local/sbin"
   export PATH="${PATH}:${ENV_HOME}"
   export PATH="${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
-  export PATH="${PATH}:${MDBOOK_HOME}"
+  export PATH="${PATH}:${RCLONE_HOME}"
 fi
