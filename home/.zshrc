@@ -107,7 +107,7 @@ export http_proxy="http://${proxy_host}:${http_proxy_port}"
 export https_proxy="${http_proxy}"
 export socks_proxy="socks5://${proxy_host}:${socks_proxy_port}"
 
-export no_proxy="localhost,127.0.0.1,10.96.0.0/24,192.168.0.0/16,1192.168.8.2/16,192.168.64.7/24"
+export no_proxy="localhost,127.0.0.1,10.96.0.0/24,192.168.0.0/16,192.168.8.2/16,192.168.31.2/16,192.168.64.7/24"
 
 # home lab
 export HOMELAB_HOME="${HOME}/Code/github/homelab"
@@ -117,8 +117,10 @@ alias feilo="${HOMELAB_HOME}/ray/ray.sh load"
 export JAVA_HOME="${HOME}/Code/env/jdk"
 export MAVEN_HOME="${HOME}/Code/env/maven"
 
-# mdbook
-export MDBOOK_HOME="${HOME}/Code/env/mdbook"
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # rclone
 export RCLONE_HOME="${HOME}/Code/env/rclone"
@@ -140,3 +142,4 @@ if [[ ! -z $TMUX ]]; then
   export PATH="${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"
   export PATH="${PATH}:${RCLONE_HOME}"
 fi
+

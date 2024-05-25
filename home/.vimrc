@@ -15,6 +15,7 @@ set shiftwidth=4
 filetype on
 " set tab size to 2 spaces for shell scripts
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 
 
 " keymaps
