@@ -136,7 +136,7 @@ alias daily="${HOME}/Code/script/daily-note/daily.sh"
 export ENV_HOME="${HOME}/Code/env"
 
 # Does not load PATH again in tmux
-if [[ ! -z $TMUX ]]; then
+if [[ -z $TMUX ]]; then
   export PATH="${PATH}:/usr/local/sbin"
   export PATH="${PATH}:${ENV_HOME}"
   export PATH="${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin"

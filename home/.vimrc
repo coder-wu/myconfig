@@ -17,6 +17,9 @@ filetype on
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 
+" use tab not space in makefile
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 
 " keymaps
 imap jk <Esc>
