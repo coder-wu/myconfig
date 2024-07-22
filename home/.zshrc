@@ -99,15 +99,14 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # proxy
-export proxy_host="127.0.0.1"
+export proxy_host="proxy.homelab.coderwu.com"
 export http_proxy_port=1087
 export socks_proxy_port=1081
 
-export http_proxy="http://${proxy_host}:${http_proxy_port}"
-export https_proxy="${http_proxy}"
-export socks_proxy="socks5://${proxy_host}:${socks_proxy_port}"
-
-export no_proxy="localhost,127.0.0.1,10.96.0.0/24,192.168.0.0/16,192.168.8.2/16,192.168.31.2/16,192.168.64.7/24"
+export NO_PROXY="localhost,127.0.0.1,10.96.0.0/24,192.168.0.0/16"
+export HTTP_PROXY="http://${proxy_host}:${http_proxy_port}"
+export HTTPS_PROXY="${HTTP_PROXY}"
+export SOCKS_PROXY="socks5://${proxy_host}:${socks_proxy_port}"
 
 # home lab
 export HOMELAB_HOME="${HOME}/Code/github/homelab"
